@@ -1,5 +1,6 @@
 ---
 - name: Download cyberduck package
+  become: yes
   win_get_url:
     url: https://update.cyberduck.io/windows/Cyberduck-Installer-8.5.6.39394.exe
     dest: C:\temp\cyberduck.exe
