@@ -1,16 +1,4 @@
 ---
-- name: Install all critical and security updates
-  win_updates:
-    category_names:
-    - CriticalUpdates
-    - SecurityUpdates
-    state: installed
-  register: update_result
-
-- name: Reboot host if required
-  win_reboot:
-  when: update_result.reboot_required
-
 - name: Download cyberduck package
   win_get_url:
     url: https://update.cyberduck.io/windows/Cyberduck-Installer-8.5.6.39394.exe
