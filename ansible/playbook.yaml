@@ -9,4 +9,4 @@
   become: yes
   win_package:
     path: C:\temp\cyberduck.exe
-    state: present
+    state: present  
