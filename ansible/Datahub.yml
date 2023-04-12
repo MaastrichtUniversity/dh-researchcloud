@@ -25,14 +25,6 @@
         src: "https://download.acc.dh.unimaas.nl"
         fstype: davfs
         state: mounted
-        opts: "username={{ webdav_username }},password={{ webdav_token }}"
-      vars_prompt:
-        - name: "webdav_username"
-          prompt: "Enter WebDAV username"
-          private: yes
-        - name: "webdav_token"
-          prompt: "Enter WebDAV password"
-          private: yes
 
     - name: Mount WebDAV upload share
       mount:
@@ -40,11 +32,3 @@
         src: "https://upload.acc.dh.unimaas.nl"
         fstype: davfs
         state: mounted
-        opts: "username={{ webdav_username }},password={{ webdav_token }}"
-      vars_prompt:
-        - name: "webdav_username"
-          prompt: "Enter WebDAV username"
-          private: yes
-        - name: "webdav_token"
-          prompt: "Enter WebDAV password"
-          private: yes
