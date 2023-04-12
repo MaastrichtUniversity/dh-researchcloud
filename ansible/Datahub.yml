@@ -17,4 +17,4 @@
         src: "https://download.acc.dh.unimaas.nl"
         fstype: davfs
         state: mounted
-        opts: "username="{{ Username }}",password="{{ Token }}""
+        
