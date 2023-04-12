@@ -1,5 +1,5 @@
 ---
-- name: Install GNOME desktop and mount WebDAV share
+- name: mount WebDAV share
   hosts:
     - localhost
   gather_facts: false
@@ -11,24 +11,10 @@
       wait_for_connection:
         timeout: 300
 
-    - name: Install GNOME desktop
-      apt:
-        name:
-          - ubuntu-desktop
-          - gnome-shell
-          - gnome-session
-        state: present
-
     - name: Mount WebDAV download share
       mount:
         name: /mnt/webdav
         src: "https://download.acc.dh.unimaas.nl"
         fstype: davfs
         state: mounted
-
-    - name: Mount WebDAV upload share
-      mount:
-        name: /mnt/webdav
-        src: "https://upload.acc.dh.unimaas.nl"
-        fstype: davfs
-        state: mounted
+        opts: "username="{{ Username }}",password="{{ Token }}""
